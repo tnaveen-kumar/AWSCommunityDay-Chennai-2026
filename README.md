@@ -1,4 +1,4 @@
-# AWS Community Day Chennai 2026 - AI/ML Workshop
+# AWS Community Day Chennai 2026 - Beyond Object Storage: Getting Started with Amazon S3 Vectors
 
 This repository contains demo applications and scripts for learning AWS Bedrock, embeddings, vector search, and RAG (Retrieval Augmented Generation) using Amazon S3 Vector capabilities.
 
@@ -107,20 +107,15 @@ python 1-3-Chunk.py
 ### 3. AWS S3 Vector Search
 
 #### `2-1-AWS-S3VectorBucket-App.py` - Interactive Vector Search Demo
-Colorful CLI application demonstrating semantic search using S3 Vector indexes.
+CLI application demonstrating semantic search using S3 Vector indexes.
 
 **Features:**
-- AWS-themed UI with animations
-- Pre-configured questions about Chennai
 - Real-time vector querying
 - JSON-formatted results
-- Loading animations and spinners
 
 **Questions Demonstrated:**
 1. "Why is it so hot here?" (Chennai weather)
 2. "Tell me about scalability and load balancing" (Tech concepts)
-3. "Anything special about Chennai cricket pitch?" (Sports)
-4. "Who are the awesome people today?" (Event attendees)
 
 **Run:**
 ```bash
@@ -130,7 +125,7 @@ python 2-1-AWS-S3VectorBucket-App.py
 **Requirements:**
 - S3 vector bucket: `acd-chennai-s3-app-demo`
 - Index name: `s3-app-index`
-- Pre-loaded with data from `10---Data-load-s3vector-app-demo.ps1`
+- Pre-loaded with the data from `10---Data-load-s3vector-app-demo.ps1`
 
 #### `2-2-AWS-S3VectorBucket-Manual.ps1` - Manual S3 Vector Setup
 PowerShell script with step-by-step commands for creating and querying S3 vector buckets.
@@ -273,17 +268,10 @@ s3vectors-embed --help
 pip install streamlit boto3 pypdf colorama numpy
 ```
 
-## Event Information
-
-**AWS Community Day Chennai 2026**
-- Topic: Generative AI with AWS
-- Focus: Embeddings, Vector Search, and RAG
-- Demos: Chennai-themed examples with local humor
-
 ## License
 
 Demo code for educational purposes - AWS Community Day Chennai 2026
 
 ## Author
 
-Created for AWS Community Day Chennai 2026 workshop participants
+Naveen Kumar -> https://www.linkedin.com/in/tnaveen-kumar/
