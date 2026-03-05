@@ -22,36 +22,9 @@ The project demonstrates progressive learning from basic chatbots to advanced RA
 
 ## Project Structure
 
-### 1. Basic Chatbot Applications
+Follow the scripts in this order for the best learning experience:
 
-#### `1-0-App-V1.py` - Simple Chatbot
-Basic Streamlit chatbot using Claude 3 Haiku. Single-turn conversation with no memory.
-
-**Features:**
-- Text input interface
-- Direct Bedrock API integration
-- Single request/response flow
-
-**Run:**
-```bash
-streamlit run 1-0-App-V1.py
-```
-
-#### `1-0-App-V2.py` - Conversational Chatbot
-Enhanced version with conversation memory using Streamlit session state.
-
-**Features:**
-- Chat interface with message history
-- Multi-turn conversations
-- Session state management
-- Persistent conversation context
-
-**Run:**
-```bash
-streamlit run 1-0-App-V2.py
-```
-
-### 2. Embeddings & Vector Fundamentals
+### 1. Understanding Embeddings & Vector Fundamentals
 
 #### `1-1TokensAndEmbeddings.py` - Understanding Embeddings
 Demonstrates how text is converted to vector embeddings using Amazon Titan.
@@ -104,18 +77,52 @@ Demonstrates text chunking with and without overlap for document processing.
 python 1-3-Chunk.py
 ```
 
+### 2. Basic Chatbot Applications
+
+#### `1-4-App-Streamlit.py` - Simple Chatbot
+Basic Streamlit chatbot using Claude 3 Haiku. Single-turn conversation with no memory.
+
+**Features:**
+- Text input interface
+- Direct Bedrock API integration
+- Single request/response flow
+
+**Run:**
+```bash
+streamlit run 1-4-App-Streamlit.py
+```
+
+#### `1-5-App-Streamlit.py` - Conversational Chatbot
+Enhanced version with conversation memory using Streamlit session state.
+
+**Features:**
+- Chat interface with message history
+- Multi-turn conversations
+- Session state management
+- Persistent conversation context
+
+**Run:**
+```bash
+streamlit run 1-5-App-Streamlit.py
+```
+
 ### 3. AWS S3 Vector Search
 
 #### `2-1-AWS-S3VectorBucket-App.py` - Interactive Vector Search Demo
-CLI application demonstrating semantic search using S3 Vector indexes.
+Colorful CLI application demonstrating semantic search using S3 Vector indexes.
 
 **Features:**
+- AWS-themed UI with animations
+- Pre-configured questions about Chennai
 - Real-time vector querying
 - JSON-formatted results
+- Loading animations and spinners
 
 **Questions Demonstrated:**
 1. "Why is it so hot here?" (Chennai weather)
 2. "Tell me about scalability and load balancing" (Tech concepts)
+3. "Anything special about Chennai cricket pitch?" (Sports)
+4. "Who are the awesome people today?" (Event attendees)
 
 **Run:**
 ```bash
@@ -125,7 +132,7 @@ python 2-1-AWS-S3VectorBucket-App.py
 **Requirements:**
 - S3 vector bucket: `acd-chennai-s3-app-demo`
 - Index name: `s3-app-index`
-- Pre-loaded with the data from `10---Data-load-s3vector-app-demo.ps1`
+- Pre-loaded with data from `10---Data-load-s3vector-app-demo.ps1`
 
 #### `2-2-AWS-S3VectorBucket-Manual.ps1` - Manual S3 Vector Setup
 PowerShell script with step-by-step commands for creating and querying S3 vector buckets.
@@ -143,27 +150,13 @@ PowerShell script with step-by-step commands for creating and querying S3 vector
 # Follow commands in the script manually
 ```
 
-#### `10---Data-load-s3vector-app-demo.ps1` - Demo Data Loader
-Loads Chennai-themed sample data into S3 vector index for the demo application.
-
-**Sample Data:**
-- Chennai weather humor
-- Traffic and architecture analogies
-- Cricket references
-- AWS Community Day mentions
-
-**Run:**
-```powershell
-.\10---Data-load-s3vector-app-demo.ps1
-```
-
 ### 4. Advanced RAG Application
 
-#### `3-1-CustomRAGwithS3-Manual.py` - Full RAG System
-Complete Retrieval Augmented Generation system with PDF processing and vector search.
+#### `3-1-CustomRAGwithS3-Streamlit.py` - Full RAG System
+Complete Retrieval Augmented Generation system with PDF and TXT processing and vector search.
 
 **Architecture:**
-1. PDF upload to S3 (`acd-2026-raw`)
+1. Document upload to S3 (`acd-2026-raw`)
 2. Text extraction and chunking
 3. Embedding generation (Titan)
 4. Vector storage (S3 Vectors)
@@ -171,11 +164,11 @@ Complete Retrieval Augmented Generation system with PDF processing and vector se
 6. Context-aware answer generation (Claude)
 
 **Features:**
-- PDF document upload
+- PDF and TXT document upload
 - Automatic text extraction
-- Intelligent chunking (800 chars, 150 overlap)
+- Intelligent chunking (500 chars, 150 overlap)
 - Vector embedding and indexing
-- Top-K retrieval (K=10)
+- Top-K retrieval (K=20)
 - LLM-powered answer generation
 - Context display
 
@@ -183,13 +176,15 @@ Complete Retrieval Augmented Generation system with PDF processing and vector se
 - Document bucket: `acd-2026-raw`
 - Vector bucket: `acd-2026-raw-vector`
 - Index: `demo-index`
-- Chunk size: 800 characters
+- Chunk size: 500 characters
 - Chunk overlap: 150 characters
-- Top K results: 10
+- Top K results: 20
+- Max tokens: 1000
+- Temperature: 0.5
 
 **Run:**
 ```bash
-streamlit run 3-1-CustomRAGwithS3-Manual.py
+streamlit run 3-1-CustomRAGwithS3-Streamlit.py
 ```
 
 **Workflow:**
@@ -233,14 +228,19 @@ Measuring how similar two pieces of text are in meaning, not just keywords.
 
 ## Learning Path
 
-1. Start with `1-0-App-V1.py` and `1-0-App-V2.py` to understand basic LLM integration
-2. Explore `1-1TokensAndEmbeddings.py` to see how embeddings work
-3. Try `1-2-Ranking.py` for hands-on semantic search
-4. Understand chunking with `1-3-Chunk.py`
-5. Set up S3 vectors using `2-2-AWS-S3VectorBucket-Manual.ps1`
-6. Load demo data with `10---Data-load-s3vector-app-demo.ps1`
-7. Run the interactive demo `2-1-AWS-S3VectorBucket-App.py`
-8. Build a complete RAG system with `3-1-CustomRAGwithS3-Manual.py`
+Follow these scripts in order for the best learning experience:
+
+1. **`1-1TokensAndEmbeddings.py`** - Understand how text becomes vectors
+2. **`1-2-Ranking.py`** - Learn semantic similarity and ranking
+3. **`1-3-Chunk.py`** - See how documents are chunked for processing
+4. **`1-4-App-Streamlit.py`** - Build a simple chatbot
+5. **`1-5-App-Streamlit.py`** - Add conversation memory to your chatbot
+6. **`2-1-AWS-S3VectorBucket-App.py`** - Run interactive vector search demo
+7. **`2-2-AWS-S3VectorBucket-Manual.ps1`** - Learn S3 vector operations manually
+8. **`3-1-CustomRAGwithS3-Streamlit.py`** - Build a complete RAG system
+
+### Supporting Scripts
+- **`10---Data-load-s3vector-app-demo.ps1`** - Load demo data for 2-1 (run before step 6)
 
 ## Configuration
 
@@ -267,10 +267,6 @@ s3vectors-embed --help
 ```bash
 pip install streamlit boto3 pypdf colorama numpy
 ```
-
-## License
-
-Demo code for educational purposes - AWS Community Day Chennai 2026
 
 ## Author
 
