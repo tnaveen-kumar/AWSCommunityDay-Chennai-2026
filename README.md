@@ -8,7 +8,7 @@ The project demonstrates progressive learning from basic chatbots to advanced RA
 - Amazon Bedrock (Claude 3 Haiku, Titan Embeddings)
 - Amazon S3 Vector Search
 - Streamlit for UI
-- Python and PowerShell automation
+- Python
 
 ## Prerequisites
 
@@ -107,32 +107,6 @@ streamlit run 1-5-App-Streamlit.py
 ```
 
 ### 3. AWS S3 Vector Search
-
-#### `2-1-AWS-S3VectorBucket-App.py` - Interactive Vector Search Demo
-Colorful CLI application demonstrating semantic search using S3 Vector indexes.
-
-**Features:**
-- AWS-themed UI with animations
-- Pre-configured questions about Chennai
-- Real-time vector querying
-- JSON-formatted results
-- Loading animations and spinners
-
-**Questions Demonstrated:**
-1. "Why is it so hot here?" (Chennai weather)
-2. "Tell me about scalability and load balancing" (Tech concepts)
-3. "Anything special about Chennai cricket pitch?" (Sports)
-4. "Who are the awesome people today?" (Event attendees)
-
-**Run:**
-```bash
-python 2-1-AWS-S3VectorBucket-App.py
-```
-
-**Requirements:**
-- S3 vector bucket: `acd-chennai-s3-app-demo`
-- Index name: `s3-app-index`
-- Pre-loaded with data from `10---Data-load-s3vector-app-demo.ps1`
 
 #### `2-2-AWS-S3VectorBucket-Manual.ps1` - Manual S3 Vector Setup
 PowerShell script with step-by-step commands for creating and querying S3 vector buckets.
@@ -235,7 +209,6 @@ Follow these scripts in order for the best learning experience:
 3. **`1-3-Chunk.py`** - See how documents are chunked for processing
 4. **`1-4-App-Streamlit.py`** - Build a simple chatbot
 5. **`1-5-App-Streamlit.py`** - Add conversation memory to your chatbot
-6. **`2-1-AWS-S3VectorBucket-App.py`** - Run interactive vector search demo
 7. **`2-2-AWS-S3VectorBucket-Manual.ps1`** - Learn S3 vector operations manually
 8. **`3-1-CustomRAGwithS3-Streamlit.py`** - Build a complete RAG system
 
